@@ -3,18 +3,20 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 22vmin;
+  margin-left: -80%;
+  margin-top: -8%;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url('backgroundfire2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#title1{
+  margin-top: -4%;
+}
+
+#caserne{
+  float: left;
+  width: 50%;
+}
+
+#sinistre{
+  float: right;
+  width: 50%;
+}
+
+#dropcolor{
+  display: block;
+  width: 35%;
+  height: auto;
+  background-color: aquamarine;
+  text-align: center;
+  padding: 20px;
+  border: 3px blue dashed;
+  margin: auto;
+}
+
+#basket1{
+  display: block;
+  width: 35%;
+  height: auto;
+  background-color: rgb(255, 244, 127);
+  text-align: center;
+  padding: 20px;
+  margin: auto;
 }

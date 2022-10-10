@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+  float: left; 
+  width: 400px; 
+  height: 350px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+
+<p>déplacer le texte (p)</p>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+  <p class="dropitem" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget1">Déplacez moi 1 svp !!!</p>
+  <p class="dropitem" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget2">Déplacez moi 2 svp !!!</p>
+  <p class="dropitem" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget3">Déplacez moi 3 svp !!!</p>
+
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"></p>
+
+<p id="demo"></p>
+
+<script>
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+  document.getElementById("demo").innerHTML = document.getElementById(data).id + " est en voyage";
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById("demo").innerHTML = document.getElementById(data).id+" est arrivé";
+}
+</script>
+
+</body>
+</html>
+
